@@ -20,7 +20,7 @@ spec:
         - name: aliyunrepo
       containers:
         - name: nginx
-          image: "registry.aliyuncs.com/xiaolu-img/nginx:IMAGE_TAG"
+          image: "registry.aliyuncs.com/ndpuz-img/nginx:IMAGE_TAG"
           ports:
             - containerPort: 80
               name: http

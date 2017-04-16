@@ -1,5 +1,5 @@
 node {
-  def imageTag = "registry.aliyuncs.com/xiaolu-img/nginx:${env.BRANCH_NAME}.${env.BUILD_NUMBER}"
+  def imageTag = "registry.aliyuncs.com/ndpuz-img/nginx:${env.BRANCH_NAME}.${env.BUILD_NUMBER}"
   checkout scm
   withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
     sh("docker login -u ${env.DOCKER_USERNAME} -p ${env.DOCKER_PASSWORD} registry.aliyuncs.com")
