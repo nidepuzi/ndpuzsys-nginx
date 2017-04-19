@@ -1,6 +1,6 @@
 from nginx
 
-ADD data /data
+add data /data
 run mkdir -p /data/verify
 run mkdir -p /data/log
 
