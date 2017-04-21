@@ -10,7 +10,7 @@ node {
     sh("mkdir -p data/site_media")
     sh('docker run --rm -v "$PWD":/workspace registry.aliyuncs.com/ndpuz-img/ndpuzsys-ui:master cp -rf /var/www/static /workspace/data/site_media')
     sh("mkdir -p data/mall")
-    sh('docker run --rm -v "$PWD":/workspace registry.aliyuncs.com/ndpuz-img/ndpuzsys-ui:mall-master cp -rf /var/www/mall /workspace/data/mall')
+    sh('docker run --rm -v "$PWD":/workspace registry.aliyuncs.com/ndpuz-img/ndpuzsys-ui:mall cp -rf /var/www/mall /workspace/data/mall')
   }
   if (env.BRANCH_NAME == "ui-staging") {
     sh("mkdir -p data/console")
@@ -18,7 +18,7 @@ node {
     sh("mkdir -p data/site_media")
     sh('docker run --rm -v "$PWD":/workspace registry.aliyuncs.com/ndpuz-img/ndpuzsys-ui:staging cp -rf /var/www/static /workspace/data/site_media')
     sh("mkdir -p data/mall")
-    sh('docker run --rm -v "$PWD":/workspace registry.aliyuncs.com/ndpuz-img/ndpuzsys-ui:mall-staging cp -rf /var/www/mall /workspace/data/mall')
+    sh('docker run --rm -v "$PWD":/workspace registry.aliyuncs.com/ndpuz-img/ndpuzsys-ui:mall cp -rf /var/www/mall /workspace/data/mall')
   }
   sh("docker build -t ${imageTag} .")
   sh("docker push ${imageTag}")
